@@ -24,9 +24,9 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use('/order', routerorder);
-app.use(morgan('dev'));
 app.use('/user', userRoute);
 app.use('/proudcts', routerproudcts);
 app.use('/uploads', express.static('uploads'));
+
 mongoos.Promise = global.Promise;
 module.exports = app;
