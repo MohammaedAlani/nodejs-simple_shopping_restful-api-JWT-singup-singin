@@ -1,8 +1,8 @@
 const mongoos = require('mongoose');
 const User = require('../model/user');
 const bcryot = require('bcrypt');
-const jwt = require('jsonwebtoken');
-
+const jwt = require('jsonwebtoken'); 
+// controller function
 exports.users_create_user = (req, res, next)=>{
     User.find({email : req.body.email}).exec().then(user =>{
         if (user.length >= 1) {
@@ -53,7 +53,7 @@ exports.users_login_user =  (req, res, next)=>{
                 })
                 return res.status(200).json({
                     message : 'Auth Secess',
-                    
+
                     token : token
                 });            
             };
